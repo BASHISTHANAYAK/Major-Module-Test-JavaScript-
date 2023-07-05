@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #FirstPage {
+        width: 100vw;
+        height: 100vh;
+        background-color: #8cc461;
+      }
+      #RPS-header-div {
+        width: 50%;
+        height: auto;
+        border: 2px solid red;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      #white-border {
+        width: 60%;
+        height: auto;
+        border: 1px solid white;
+        border-radius: 10px;
+        display: grid;
+        grid-template-columns: 60% auto 15%;
+     justify-content: space-around;
+        padding: 5px;
+      }
+      #white-border div {
+        border: 1.5px solid black;
+        height: 55px;
+        color: white;
+        align-items: center;
+        font-weight: bold;
+        padding: 2px;
+        border-radius: 10px;
+      }
+      #white-border div p {
+      }
+
+      #white-border>div:nth-child(1){
+         line-height: 2px;
+         padding-bottom: 9px;
+      }
+
+      #white-border>div:nth-child(2), #white-border>div:nth-child(3){
+        background-color: white;
+        color: black;
+        font-size: 60%;
+        text-align: center;
+        line-height:2px;
+      }
+
+      #white-border div b{
+            font-size: 33px;
+        display: block;
+       padding: 7px;
+      }
+
+
+
+
+
+      @media (max-width: 800px) {
+        #white-border {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+        }
+        #white-border div {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="FirstPage">
+      <div id="RPS-header-div">
+        <div id="white-border">
+          <div>
+            <p>ROCK</p>
+            <p>PAPER</p>
+            <p>SCISSORS</p>
+          </div>
+          <div>
+            <P>COMPUTER</P>
+            <P>SCORE</P>
+            <b>0</b>
+        </div>
+          <div>
+            <P>YOUR</P>
+            <P>SCORE</P>
+            <b>0</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="youWin"></div>
+    <div id="YouLost"></div>
+    <div id="TieUp"></div>
+  </body>
+</html>
