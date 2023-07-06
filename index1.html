@@ -64,6 +64,119 @@
        padding: 7px;
       }
 
+#Second-parent-box{
+  border: 1px solid white;
+  width: 90%;
+  height: 60vh ;
+ margin:50px 0px 0px 10% ;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+#Circle-div,#Rules-div{
+  border: 1.5px solid red;
+width: 45%;
+height: 80%;
+}
+
+#Circle-div>div:nth-child(1){
+  border: 2px dotted black;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+#Circle-div>div:nth-child(3){
+  margin-top: 5px;
+  border: 2px dotted black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Circles{
+  border: 9px solid blue;
+  width: 70px;
+  height: 70px;
+  background-color: aliceblue;
+  border-radius:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Circles img{
+  display: block;
+  width: 70%;
+}
+
+.Long-bar{
+ border: 3px solid black;
+ height:3px;
+ width: 50px;
+ background-color: black;
+ /* position: absolute; */
+}
+
+.Middle-bar-parent{
+  border: 2px dotted red;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.SecondBar{
+width: 53px;
+height: 5px;
+border: 1px solid;
+background-color: black;
+rotate: 58deg;
+position: relative;
+margin-left: -30px;
+top: -6px;
+}
+
+.ThirdBar{
+  width: 53px;
+  height: 5px;
+  background-color: black;
+  border: 1px solid;
+  rotate: -60deg;
+  margin-right: -29px;
+  margin-top: -8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,27 +194,64 @@
     </style>
   </head>
   <body>
-    <div id="FirstPage">
-      <div id="RPS-header-div">
-        <div id="white-border">
-          <div>
-            <p>ROCK</p>
-            <p>PAPER</p>
-            <p>SCISSORS</p>
+    <header id="FirstPage">
+          <div id="RPS-header-div">
+            <div id="white-border">
+              <div>
+                <p>ROCK</p>
+                <p>PAPER</p>
+                <p>SCISSORS</p>
+              </div>
+              <div>
+                <P>COMPUTER</P>
+                <P>SCORE</P>
+                <b>0</b>
+            </div>
+              <div>
+                <P>YOUR</P>
+                <P>SCORE</P>
+                <b>0</b>
+              </div>
+            </div>
           </div>
-          <div>
-            <P>COMPUTER</P>
-            <P>SCORE</P>
-            <b>0</b>
-        </div>
-          <div>
-            <P>YOUR</P>
-            <P>SCORE</P>
-            <b>0</b>
+
+
+          <div id="Second-parent-box">
+
+                      <div id="Circle-div">
+                          <div>
+                                <div class="Circles">
+                                  <img src="./Images/icons8-fist-67 1.png" alt="">
+                                </div>
+                                <div class="Long-bar"></div>
+                                <div class="Circles">
+                                  <img src="./Images/icons8-fist-67 1.png" alt="">
+                                </div>
+                          </div>
+                                    <div class="Middle-bar-parent">
+                                          <div class=" SecondBar"></div>
+                                         <div class=" ThirdBar"></div>
+                                   </div>
+                          <div> 
+                                <div class="Circles">
+                                <img src="./Images/icons8-fist-67 1.png" alt="">
+                              </div>
+                          </div>                             
+                      </div>
+
+
+
+                   <div id="Rules-div"></div>
+                   
           </div>
-        </div>
-      </div>
-    </div>
+
+    </header>
+      
+
+
+
+
+
     <div id="youWin"></div>
     <div id="YouLost"></div>
     <div id="TieUp"></div>

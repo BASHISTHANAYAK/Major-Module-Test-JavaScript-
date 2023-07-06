@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #triangle {
+        width: 500px;
+        height: 500px;
+        border: 2px solid red;
+      }
+      .first-div {
+        border: 2px solid red;
+        width: 40%;
+        height: 100px;
+        margin: auto;
+        border-bottom: 8px solid blue;
+      }
+      .first-circle{
+        width: 30px;
+        height: 30px;
+        border: 4px solid blue;
+        border-radius: 50%;
+        background-color: rgb(23, 3, 111);
+        position: relative;
+        margin-top: 80px;
+       margin-left: -23px;
+      }
+
+      .second-circle{
+        width: 30px;
+        height: 30px;
+        border: 4px solid blue;
+        border-radius: 50%;
+        background-color: rgb(23, 3, 111);
+        position: relative;
+      margin-left: 190px;
+     margin-top: -36px;
+      }
+
+      .second-div {
+        border: 1px solid black;
+        height: 150px;
+        width: 80%;
+        display: flex;
+        margin: auto;
+        margin-top: 70px;
+        justify-content: center;
+      }
+      .Two-bars {
+        border: 3px solid blue;
+        width: 40%;
+        height: 3px;
+    background-color: blue;
+      }
+      .second-div div:nth-child(1){
+        rotate: 54deg;
+        margin-right: -31px;
+      }
+
+      .second-div div:nth-child(2){
+        rotate: -54deg;
+        position: relative;
+        margin-left: -31px;
+      }
+
+      .top-circle{
+        width: 30px;
+        height: 30px;
+        border: 4px solid blue;
+        border-radius: 50%;
+        background-color: rgb(23, 3, 111);
+     position: absolute;
+     margin-top: 40px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="triangle">
+      <div class="first-div">
+        <div class="first-circle"></div>
+        <div class="second-circle"></div>
+    </div>
+
+      <div class="second-div">
+        <div class="Two-bars"></div>
+        <div class="Two-bars"></div>
+        <div class="top-circle"></div>
+      </div>
+    </div>
+  </body>
+</html>
