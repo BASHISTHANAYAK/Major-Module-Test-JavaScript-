@@ -21,29 +21,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+     padding: 70px;
       }
       #white-border {
-        width: 60%;
+        width: 70%;
         height: auto;
         border: 1px solid white;
         border-radius: 10px;
         display: grid;
         grid-template-columns: 60% auto 15%;
      justify-content: space-around;
-        padding: 5px;
+        padding: 15px;
       }
       #white-border div {
         border: 1.5px solid black;
-        height: 55px;
+        height: 65px;
         color: white;
         align-items: center;
         font-weight: bold;
         padding: 2px;
         border-radius: 10px;
       }
-      #white-border div p {
-      }
+    
 
       #white-border>div:nth-child(1){
          line-height: 2px;
@@ -64,118 +63,171 @@
        padding: 7px;
       }
 
-#Second-parent-box{
-  border: 1px solid white;
-  width: 90%;
-  height: 60vh ;
- margin:50px 0px 0px 10% ;
- display: flex;
- align-items: center;
- justify-content: space-between;
+
+
+
+
+
+
+
+
+
+
+
+
+  #triangle {
+        width: 500px;
+        height: 500px;
+        border: 2px solid red;       
+        margin: auto;
+        margin-top: 40px;
+      }
+      .first-div {
+        border: 2px solid rgb(0, 255, 68);
+        width: 40%;
+        height: 100px;
+        margin: auto;
+        border-bottom: 8px solid transparent;
+        border-bottom: 8px solid #000000A3;
+      }
+
+
+      /* ********************************************************************* */
+      .first-circle{
+        width: 80px;
+        height: 80px;
+        border: 8px solid rgb(255, 0, 0);
+        border-radius: 50%;
+        background-color: rgb(241, 240, 244);
+        position: relative;
+        margin-top: 60px;
+       margin-left: -60px;
+      }
+
+      .second-circle{
+        width: 80px;
+        height:80px;
+        border: 8px solid rgb(255, 0, 38);
+        border-radius: 50%;
+        background-color: rgb(245, 241, 241);
+        position: relative;
+      /* margin-left: 113px;
+     margin-top: -69px; */
+     top: -93px;
+     right: -167px;
+      }
+
+      .top-circle{
+        width:80px;
+        height: 80px;
+        border: 8px solid rgb(255, 0, 21);
+        border-radius: 50%;
+        background-color: rgb(243, 239, 240);
+     position: absolute;
+     margin-top: 30px;
+      }
+
+      /* ********************************************************************* */
+
+
+      .second-div {
+        border: 1px solid black;
+        height: 150px;
+        width: 80%;
+        display: flex;
+        margin: auto;
+        margin-top: 63px;
+        justify-content: center;
+      }
+   
+
+      .Two-bars {
+        border: 3px solid transparent;
+        width: 26.8%;
+        height: 3px;
+        background-color: #000000A3;
+      }
+      .second-div div:nth-child(1){
+        position: relative;
+        rotate: 50deg;
+        margin-right: -20px;
+      
+      }
+
+      .second-div div:nth-child(2){
+        position: relative;
+        rotate: -50deg;
+        margin-left: -20px;
+      }
+
+
+
+      .first-circle,.second-circle,.top-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+      }
+
+    .first-div img,.second-div img{
+        width: 50%;
+    }
+
+
+#rulesBox{
+  border: 5px solid white;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 48%;
+  right: 10%;
+  border-radius: 10px;
+  padding: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+background-color: #004429;
+}
+    
+
+#rulesContent {
+  border: 1px solid transparent;
+  margin-bottom: 10px;
 }
 
-#Circle-div,#Rules-div{
-  border: 1.5px solid red;
-width: 45%;
-height: 80%;
+#rulesContent h2{
+text-align: center;
 }
 
-#Circle-div>div:nth-child(1){
-  border: 2px dotted black;
-display: flex;
-justify-content: center;
-align-items: center;
-
-}
-
-#Circle-div>div:nth-child(3){
-  margin-top: 5px;
-  border: 2px dotted black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Circles{
-  border: 9px solid blue;
-  width: 70px;
-  height: 70px;
-  background-color: aliceblue;
-  border-radius:50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Circles img{
-  display: block;
-  width: 70%;
-}
-
-.Long-bar{
- border: 3px solid black;
- height:3px;
- width: 50px;
- background-color: black;
- /* position: absolute; */
-}
-
-.Middle-bar-parent{
-  border: 2px dotted red;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.SecondBar{
-width: 53px;
-height: 5px;
-border: 1px solid;
-background-color: black;
-rotate: 58deg;
-position: relative;
-margin-left: -30px;
-top: -6px;
-}
-
-.ThirdBar{
-  width: 53px;
-  height: 5px;
-  background-color: black;
-  border: 1px solid;
-  rotate: -60deg;
-  margin-right: -29px;
-  margin-top: -8px;
+#rulesContent li{
+  list-style-type: square;
+ 
 }
 
 
 
 
+#closeButton {
+  position: absolute;
+  /* font-size: 40px; */
+  cursor: pointer;
+  color: white;
+  border: 3px solid white;
+  right: -28px;
+  top: -38px;
+  color: white;
+  background-color: red;
+  font-weight: bolder;
+  padding: 15px 15px 20px 15px;
+  width: 10px;
+  height: 10px;
+ border-radius: 50%;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.rulesButton{
+  position: absolute;
+  right: 10px;
+  top: 95%;
+}
 
 
 
@@ -216,35 +268,36 @@ top: -6px;
           </div>
 
 
-          <div id="Second-parent-box">
-
-                      <div id="Circle-div">
-                          <div>
-                                <div class="Circles">
-                                  <img src="./Images/icons8-fist-67 1.png" alt="">
-                                </div>
-                                <div class="Long-bar"></div>
-                                <div class="Circles">
-                                  <img src="./Images/icons8-fist-67 1.png" alt="">
-                                </div>
-                          </div>
-                                    <div class="Middle-bar-parent">
-                                          <div class=" SecondBar"></div>
-                                         <div class=" ThirdBar"></div>
-                                   </div>
-                          <div> 
-                                <div class="Circles">
-                                <img src="./Images/icons8-fist-67 1.png" alt="">
-                              </div>
-                          </div>                             
-                      </div>
-
-
-
-                   <div id="Rules-div"></div>
-                   
+          <div id="triangle">
+            <div class="first-div">
+              <div class="first-circle"><img src="./Images/rock.png" alt=""></div>
+              <div class="second-circle"><img src="./Images/scissors.png" alt=""></div>
+          </div>
+      
+            <div class="second-div">
+              <div class="Two-bars"></div>
+              <div class="Two-bars"></div>
+              <div class="top-circle"><img src="./Images/paper.png" alt=""></div>
+            </div>
           </div>
 
+
+
+<div id="rulesBox">
+  <div id="rulesContent">
+    <h2>Game Rules</h2>
+    <ul>
+      <li>Rock beats scissors</li>
+      <li>Paper beats rock</li>
+      <li>Scissors beats paper</li>
+      <li>If both players choose the same, it's a tie</li>
+      <li>Click the cross icon to close</li>
+    </ul>
+  </div>
+<span id="closeButton">&times;</span>
+</div>
+
+<button class="rulesButton">Rules</button>
     </header>
       
 
@@ -257,3 +310,20 @@ top: -6px;
     <div id="TieUp"></div>
   </body>
 </html>
+
+
+
+<script>
+  const rulesButton = document.getElementsByClassName('rulesButton');
+const rulesBox = document.getElementById('rulesBox');
+const closeButton = document.getElementById('closeButton');
+
+rulesButton[0].addEventListener('click', function() {
+rulesBox.style.display = 'block';
+});
+
+closeButton.addEventListener('click', function() {
+rulesBox.style.display = 'none';
+});
+
+</script>
