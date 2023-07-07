@@ -129,6 +129,10 @@
      margin-top: 30px;
       }
 
+      .first-circle, .second-circle,.top-circle:hover{
+            cursor: pointer;
+      }
+
       /* ********************************************************************* */
 
 
@@ -272,7 +276,9 @@ text-align: center;
   border-radius: 5px;
 }
 
-
+#youWin{
+  display: none;
+}
 
 
 
@@ -300,7 +306,7 @@ text-align: center;
               <div>
                 <P>COMPUTER</P>
                 <P>SCORE</P>
-                <b>0</b>
+                <b >0</b>
             </div>
               <div>
                 <P>YOUR</P>
@@ -313,14 +319,14 @@ text-align: center;
 
           <div class="triangle">
             <div class="first-div">
-              <div class="first-circle"><img src="./Images/rock.png" alt=""></div>
-              <div class="second-circle"><img src="./Images/scissors.png" alt=""></div>
+              <div class="first-circle click-to-generate"><img src="./Images/rock.png" alt=""></div>
+              <div class="second-circle click-to-generate"><img src="./Images/scissors.png" alt=""></div>
           </div>
       
             <div class="second-div">
               <div class="Two-bars"></div>
               <div class="Two-bars"></div>
-              <div class="top-circle"><img src="./Images/paper.png" alt=""></div>
+              <div class="top-circle click-to-generate"><img src="./Images/paper.png" alt=""></div>
             </div>
           </div>
 
@@ -360,12 +366,12 @@ text-align: center;
                                               <div>
                                                 <P>COMPUTER</P>
                                                 <P>SCORE</P>
-                                                <b>0</b>
+                                                <b class="Computer-score">0</b>
                                             </div>
                                               <div>
                                                 <P>YOUR</P>
                                                 <P>SCORE</P>
-                                                <b>0</b>
+                                                <b class="My-score">0</b>
                                               </div>
                                             </div>
                                           </div>
@@ -378,11 +384,11 @@ text-align: center;
                                           <div class="Two-circles">
                                             <div><img src="./Images/pc pick pink.jpg" alt=""></div>
                                             <div>
-                                              <p>YOU WIN</p>
+                                              <p id="WIn-Or-Loss-p">YOU WIN</p>
                                               <P>AGAINST PC</P>
-                                              <BUtton>PLAY AGAIN</BUtton>
+                                              <BUtton> <a href="./index1.html">PLAY AGAIN</a> </BUtton>
                                             </div>
-                                            <div><p>PC Picked</p><img src="./Images/yellow circle.png" alt=""></div>
+                                            <div>  <p>PC Picked</p><img src="./Images/yellow circle.png" alt=""></div>
                                           </div>
 
 
@@ -426,10 +432,6 @@ text-align: center;
 
 
 
-
-
-
-
                         <div id="TieUp">
 
                         </div>
@@ -443,12 +445,88 @@ text-align: center;
 const rulesBox = document.getElementsByClassName('rulesBox');
 const closeButton = document.getElementsByClassName('closeButton');
 
-rulesButton[0].addEventListener('click', function() {
-rulesBox[0].style.display = 'block';
+for(let i=0;i<4;i++){
+
+rulesButton[i].addEventListener('click', function() {
+rulesBox[i].style.display = 'block';
 });
 
-closeButton[0].addEventListener('click', function() {
-rulesBox[0].style.display = 'none';
+closeButton[i].addEventListener('click', function() {
+rulesBox[i].style.display = 'none';
 });
+
+}
+
+</script>
+
+
+
+<script>
+let AllCircles = document.getElementsByClassName("click-to-generate");
+
+let My_Score = document.getElementsByClassName("My-score");
+let Computer_score = document.getElementsByClassName("Computer-score");
+
+let FirstPage=  document.getElementsByClassName("FirstPage");
+let youWin_page = document.getElementById("youWin");
+let YouLost_page = document.getElementById("youWin_page");
+let TieUp_page = document.getElementById("TieUp");
+
+
+
+let Count_For_me=0;
+let Count_For_PC=0;
+
+
+//Generating Random Number by clicking Circles
+for(let i=0;i<3;i++){
+
+          AllCircles[i].addEventListener('click',function(){
+
+           
+
+            //Generating Random Number
+            let Generate_MYNumber =Math.floor(Math.random()*10)+1;
+        let Generate_PcNumber = Math.floor(Math.random()*10)+1;
+
+        //Printing random numbers
+        console.log("For pc" + Generate_MYNumber);
+        console.log("For me" + Generate_PcNumber);
+       
+   
+
+if(Generate_MYNumber>Generate_PcNumber){
+   //Displaying and non-displaying pages by clicking
+   FirstPage[0].style.display = 'none';
+            youWin_page.style.display = 'block';
+
+               // Adding RON in youwin page.
+          My_Score[0].innerHTML= Generate_MYNumber;       
+          Computer_score[0].innerHTML= Generate_PcNumber ;
+}
+else if(Generate_PcNumber>Generate_MYNumber){
+  FirstPage[0].style.display = 'none';
+  youWin_page.style.display = 'block';
+  YouLost_page.appendChild(youWin_page);
+ 
+  let WIn_Or_Loss_p = document.getElementById("WIn-Or-Loss-p");
+  WIn_Or_Loss_p.innerText="YOU LOST";
+}else{
+  FirstPage[0].style.display = 'none';
+  youWin_page.style.display = 'block';
+  TieUp_page.appendChild(youWin_page);
+ 
+  let WIn_Or_Loss_p = document.getElementById("WIn-Or-Loss-p");
+  WIn_Or_Loss_p.innerText="TIE";
+}
+
+  
+   
+        })
+}
+
+
+
+
 
 </script>
