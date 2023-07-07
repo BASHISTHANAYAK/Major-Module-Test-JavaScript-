@@ -319,8 +319,8 @@ text-align: center;
 
           <div class="triangle">
             <div class="first-div">
-              <div class="first-circle click-to-generate"><img src="./Images/rock.png" alt=""></div>
-              <div class="second-circle click-to-generate"><img src="./Images/scissors.png" alt=""></div>
+              <div class="first-circle click-to-generate" id="first_CR"><img src="./Images/rock.png" alt="rockImage" ></div>
+              <div class="second-circle click-to-generate" id="second_CR"><img src="./Images/scissors.png" alt=""></div>
           </div>
       
             <div class="second-div">
@@ -382,13 +382,13 @@ text-align: center;
 
 
                                           <div class="Two-circles">
-                                            <div><img src="./Images/pc pick pink.jpg" alt=""></div>
+                                            <div> <p id="you-pickedUP-P">YOU PICKED</p> <img id="Winning-page-FIRST-img" src="./Images/pc pick pink.jpg" alt=""></div>
                                             <div>
-                                              <p id="WIn-Or-Loss-p">YOU WIN</p>
+                                              <p id="WIn-Or-Loss-p"></p>
                                               <P>AGAINST PC</P>
                                               <BUtton> <a href="./index1.html">PLAY AGAIN</a> </BUtton>
                                             </div>
-                                            <div>  <p>PC Picked</p><img src="./Images/yellow circle.png" alt=""></div>
+                                            <div>  <p id="PC-picked-Up">PC Picked</p> <img id="Winning-page-SECOND-img" src="./Images/yellow circle.png" alt=""></div>
                                           </div>
 
 
@@ -438,6 +438,7 @@ text-align: center;
   </body>
 </html>
 
+<!-- *********************************************************************************************** -->
 
 
 <script>
@@ -445,7 +446,7 @@ text-align: center;
 const rulesBox = document.getElementsByClassName('rulesBox');
 const closeButton = document.getElementsByClassName('closeButton');
 
-for(let i=0;i<4;i++){
+for(let i=0;i<5;i++){
 
 rulesButton[i].addEventListener('click', function() {
 rulesBox[i].style.display = 'block';
@@ -459,7 +460,7 @@ rulesBox[i].style.display = 'none';
 
 </script>
 
-
+<!-- *********************************************************************************************** -->
 
 <script>
 let AllCircles = document.getElementsByClassName("click-to-generate");
@@ -472,57 +473,117 @@ let youWin_page = document.getElementById("youWin");
 let YouLost_page = document.getElementById("youWin_page");
 let TieUp_page = document.getElementById("TieUp");
 
+let WIn_Or_Loss_p = document.getElementById("WIn-Or-Loss-p");
 
+//!st and 2nd images of win/loss/tie page
+let Winning_page_FIRST_img = document.getElementById("Winning-page-FIRST-img");
+let Winning_page_SECOND_img = document.getElementById("Winning-page-SECOND-img");
+
+
+
+let PC_picked_Up_p = document.getElementById("PC-picked-Up");
+let you_pickedUP_P = document.getElementById("you-pickedUP-P");
 
 let Count_For_me=0;
 let Count_For_PC=0;
 
 
+
+
 //Generating Random Number by clicking Circles
 for(let i=0;i<3;i++){
 
-          AllCircles[i].addEventListener('click',function(){
+          AllCircles[i].addEventListener('click',function(event){
 
-           
+           console.log(event.currentTarget.id);
 
+          
             //Generating Random Number
             let Generate_MYNumber =Math.floor(Math.random()*10)+1;
         let Generate_PcNumber = Math.floor(Math.random()*10)+1;
 
         //Printing random numbers
-        console.log("For pc" + Generate_MYNumber);
-        console.log("For me" + Generate_PcNumber);
+        console.log("For pc" + Generate_PcNumber);
+        console.log("For me" + Generate_MYNumber);
+       
        
    
 
 if(Generate_MYNumber>Generate_PcNumber){
+
+  you_pickedUP_P.style.display='none';
+
    //Displaying and non-displaying pages by clicking
    FirstPage[0].style.display = 'none';
             youWin_page.style.display = 'block';
 
                // Adding RON in youwin page.
+               Computer_score[0].innerHTML= Generate_PcNumber ;
           My_Score[0].innerHTML= Generate_MYNumber;       
-          Computer_score[0].innerHTML= Generate_PcNumber ;
+         
+          WIn_Or_Loss_p.innerText="YOU WIN";
+
+          if(event.currentTarget.id=="first_CR"){
+            Winning_page_FIRST_img.src="./Images/blue animation.jpg";
+          Winning_page_SECOND_img.src="./Images/Simple pink.jpg";
+          }else if(event.currentTarget.id=='second_CR'){
+            Winning_page_FIRST_img.src="./Images/You picked pink.jpg";
+            Winning_page_SECOND_img.src="./Images/yellow circle.png";
+          }else{
+            Winning_page_FIRST_img.src="./Images/yellow with  animation.jpg";
+            Winning_page_SECOND_img.src="./Images/blue circle.png";
+          }
+
+
+
+//second_CR
+
+
 }
 else if(Generate_PcNumber>Generate_MYNumber){
-  FirstPage[0].style.display = 'none';
-  youWin_page.style.display = 'block';
-  YouLost_page.appendChild(youWin_page);
- 
-  let WIn_Or_Loss_p = document.getElementById("WIn-Or-Loss-p");
-  WIn_Or_Loss_p.innerText="YOU LOST";
-}else{
-  FirstPage[0].style.display = 'none';
-  youWin_page.style.display = 'block';
-  TieUp_page.appendChild(youWin_page);
- 
-  let WIn_Or_Loss_p = document.getElementById("WIn-Or-Loss-p");
-  WIn_Or_Loss_p.innerText="TIE";
-}
+          PC_picked_Up_p.style.display='none';
 
-  
-   
-        })
+          FirstPage[0].style.display = 'none';
+          youWin_page.style.display = 'block';
+
+          Computer_score[0].innerHTML= Generate_PcNumber ;
+          My_Score[0].innerHTML= Generate_MYNumber;       
+        
+          // YouLost_page.appendChild(youWin_page);
+          WIn_Or_Loss_p.innerText="YOU LOST";
+
+
+          if(event.currentTarget.id=="first_CR"){
+            Winning_page_FIRST_img.src="./Images/blue circle.png";
+          Winning_page_SECOND_img.src="./Images/pc picked yellow animation.jpg";
+          }else if(event.currentTarget.id=='second_CR'){
+            Winning_page_FIRST_img.src="./Images/Simple pink.jpg";
+            Winning_page_SECOND_img.src="./Images/Pc picked ani rock.jpg";
+          }else{
+            Winning_page_FIRST_img.src="./Images/yellow circle.png";
+            Winning_page_SECOND_img.src="./Images/pc pick pink.jpg";
+          }
+
+} else{
+      FirstPage[0].style.display = 'none';
+      youWin_page.style.display = 'block';
+
+      My_Score[0].innerHTML= Generate_MYNumber;       
+          Computer_score[0].innerHTML= Generate_PcNumber ;
+      // TieUp_page.appendChild(youWin_page);
+      WIn_Or_Loss_p.innerHTML="TIE UP";
+
+      if(event.currentTarget.id=="first_CR"){
+            Winning_page_FIRST_img.src="./Images/blue circle.png";
+          Winning_page_SECOND_img.src="./blue circle.png";
+          }else if(event.currentTarget.id=='second_CR'){
+            Winning_page_FIRST_img.src="./Images/Simple pink.jpg";
+            Winning_page_SECOND_img.src="./Images/Simple pink.jpg";
+          }else{
+            Winning_page_FIRST_img.src="./Images/yellow circle.png";
+            Winning_page_SECOND_img.src="./Images/yellow circle.png";
+          }
+} })
 }
 
 
