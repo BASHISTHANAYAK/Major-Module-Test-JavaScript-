@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        margin: 0;
-      }
-      #FirstPage {
+      body{
+            margin: 0;
+            padding: 0;
+            background-color: #8cc461;
+        }
+     .FirstPage {
         width: 100vw;
         height: 100vh;
         background-color: #8cc461;
       }
-      #RPS-header-div {
+      .RPS-header-div {
         width: 50%;
         height: auto;
         border: 2px solid red;
@@ -23,7 +25,7 @@
         align-items: center;
      padding: 70px;
       }
-      #white-border {
+      .white-border {
         width: 70%;
         height: auto;
         border: 1px solid white;
@@ -33,7 +35,7 @@
      justify-content: space-around;
         padding: 15px;
       }
-      #white-border div {
+      .white-border div {
         border: 1.5px solid black;
         height: 65px;
         color: white;
@@ -44,12 +46,12 @@
       }
     
 
-      #white-border>div:nth-child(1){
+      .white-border>div:nth-child(1){
          line-height: 2px;
          padding-bottom: 9px;
       }
 
-      #white-border>div:nth-child(2), #white-border>div:nth-child(3){
+      .white-border>div:nth-child(2), .white-border>div:nth-child(3){
         background-color: white;
         color: black;
         font-size: 60%;
@@ -57,7 +59,7 @@
         line-height:2px;
       }
 
-      #white-border div b{
+     .white-border div b{
             font-size: 33px;
         display: block;
        padding: 7px;
@@ -75,7 +77,7 @@
 
 
 
-  #triangle {
+ .triangle {
         width: 500px;
         height: 500px;
         border: 2px solid red;       
@@ -96,7 +98,7 @@
       .first-circle{
         width: 80px;
         height: 80px;
-        border: 8px solid rgb(255, 0, 0);
+        border: 8px solid #0074B6;
         border-radius: 50%;
         background-color: rgb(241, 240, 244);
         position: relative;
@@ -107,7 +109,7 @@
       .second-circle{
         width: 80px;
         height:80px;
-        border: 8px solid rgb(255, 0, 38);
+        border: 8px solid #BD00FF;
         border-radius: 50%;
         background-color: rgb(245, 241, 241);
         position: relative;
@@ -120,7 +122,7 @@
       .top-circle{
         width:80px;
         height: 80px;
-        border: 8px solid rgb(255, 0, 21);
+        border: 8px solid #FFA943;
         border-radius: 50%;
         background-color: rgb(243, 239, 240);
      position: absolute;
@@ -173,7 +175,7 @@
     }
 
 
-#rulesBox{
+.rulesBox{
   border: 5px solid white;
   width: 250px;
   height: 250px;
@@ -188,16 +190,16 @@ background-color: #004429;
 }
     
 
-#rulesContent {
+.rulesContent {
   border: 1px solid transparent;
   margin-bottom: 10px;
 }
 
-#rulesContent h2{
+.rulesContent h2{
 text-align: center;
 }
 
-#rulesContent li{
+.rulesContent li{
   list-style-type: square;
  
 }
@@ -205,7 +207,7 @@ text-align: center;
 
 
 
-#closeButton {
+.closeButton {
   position: absolute;
   /* font-size: 40px; */
   cursor: pointer;
@@ -230,25 +232,66 @@ text-align: center;
 }
 
 
+#youWin{
+  margin-top: 50px;
+}
+
+.Two-circles{
+  border: 1px solid  black;
+  width: 60%;
+  height: auto;  
+  margin: auto;
+  display: grid;
+  grid-template-columns: 50% 20% 30%;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Two-circles>div{
+  border: 1px solid red;
+  height: auto;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 150%;
+}
+
+.Two-circles>div img{
+  width:65%;
+ 
+}
+
+.Two-circles>div:nth-child(2) p{
+ align-content: center;
+}
+
+.Two-circles>div button{
+  padding: 10px 20px 10px 20px;
+  border-radius: 5px;
+}
+
+
 
 
 
       @media (max-width: 800px) {
-        #white-border {
+       .white-border {
           display: flex;
           flex-wrap: wrap;
           justify-content: space-evenly;
         }
-        #white-border div {
+        .white-border div {
           text-align: center;
         }
       }
     </style>
   </head>
   <body>
-    <header id="FirstPage">
-          <div id="RPS-header-div">
-            <div id="white-border">
+    <header class="FirstPage">
+          <div class="RPS-header-div">
+            <div class="white-border">
               <div>
                 <p>ROCK</p>
                 <p>PAPER</p>
@@ -268,7 +311,7 @@ text-align: center;
           </div>
 
 
-          <div id="triangle">
+          <div class="triangle">
             <div class="first-div">
               <div class="first-circle"><img src="./Images/rock.png" alt=""></div>
               <div class="second-circle"><img src="./Images/scissors.png" alt=""></div>
@@ -283,8 +326,8 @@ text-align: center;
 
 
 
-<div id="rulesBox">
-  <div id="rulesContent">
+<div class="rulesBox">
+  <div class="rulesContent">
     <h2>Game Rules</h2>
     <ul>
       <li>Rock beats scissors</li>
@@ -294,7 +337,7 @@ text-align: center;
       <li>Click the cross icon to close</li>
     </ul>
   </div>
-<span id="closeButton">&times;</span>
+<span class="closeButton">&times;</span>
 </div>
 
 <button class="rulesButton">Rules</button>
@@ -305,9 +348,91 @@ text-align: center;
 
 
 
-    <div id="youWin"></div>
-    <div id="YouLost"></div>
-    <div id="TieUp"></div>
+                        <div id="youWin">
+                                        <header class="FirstPage">
+                                          <div class="RPS-header-div">
+                                            <div class="white-border">
+                                              <div>
+                                                <p>ROCK</p>
+                                                <p>PAPER</p>
+                                                <p>SCISSORS</p>
+                                              </div>
+                                              <div>
+                                                <P>COMPUTER</P>
+                                                <P>SCORE</P>
+                                                <b>0</b>
+                                            </div>
+                                              <div>
+                                                <P>YOUR</P>
+                                                <P>SCORE</P>
+                                                <b>0</b>
+                                              </div>
+                                            </div>
+                                          </div>
+                                
+                                
+
+
+
+
+                                          <div class="Two-circles">
+                                            <div><img src="./Images/pc pick pink.jpg" alt=""></div>
+                                            <div>
+                                              <p>YOU WIN</p>
+                                              <P>AGAINST PC</P>
+                                              <BUtton>PLAY AGAIN</BUtton>
+                                            </div>
+                                            <div><p>PC Picked</p><img src="./Images/yellow circle.png" alt=""></div>
+                                          </div>
+
+
+
+
+
+
+
+                                          
+                                
+                                
+                                
+                                <div class="rulesBox">
+                                  <div class="rulesContent">
+                                    <h2>Game Rules</h2>
+                                    <ul>
+                                      <li>Rock beats scissors</li>
+                                      <li>Paper beats rock</li>
+                                      <li>Scissors beats paper</li>
+                                      <li>If both players choose the same, it's a tie</li>
+                                      <li>Click the cross icon to close</li>
+                                    </ul>
+                                  </div>
+                                <span class="closeButton">&times;</span>
+                                </div>
+                                
+                                <button class="rulesButton">Rules</button>
+                                    </header>
+                        </div>
+
+
+
+
+
+
+
+                        <div id="YouLost">
+                          
+                        </div>
+
+
+
+
+
+
+
+
+                        <div id="TieUp">
+
+                        </div>
   </body>
 </html>
 
@@ -315,15 +440,15 @@ text-align: center;
 
 <script>
   const rulesButton = document.getElementsByClassName('rulesButton');
-const rulesBox = document.getElementById('rulesBox');
-const closeButton = document.getElementById('closeButton');
+const rulesBox = document.getElementsByClassName('rulesBox');
+const closeButton = document.getElementsByClassName('closeButton');
 
 rulesButton[0].addEventListener('click', function() {
-rulesBox.style.display = 'block';
+rulesBox[0].style.display = 'block';
 });
 
-closeButton.addEventListener('click', function() {
-rulesBox.style.display = 'none';
+closeButton[0].addEventListener('click', function() {
+rulesBox[0].style.display = 'none';
 });
 
 </script>
