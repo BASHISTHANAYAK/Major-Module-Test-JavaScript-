@@ -9,7 +9,7 @@ body {
   background-color: #8cc461;
 }
 .RPS-header-div {
-  width: 50%;
+  width: 70%;
   height: auto;
   border: 2px solid transparent;
   margin: auto;
@@ -17,6 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 40px;
+  padding-top: 10px;
 }
 .white-border {
   width: 95%;
@@ -29,6 +30,7 @@ body {
   padding: 15px;
   font-family: 'Roboto', sans-serif;
   grid-template-rows: auto;
+
 }
 .white-border div {
   border: 1.5px solid transparent;
