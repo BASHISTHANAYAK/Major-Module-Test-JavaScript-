@@ -34,7 +34,7 @@ body {
 }
 .white-border div {
   border: 1.5px solid transparent;
-  height: 140px;
+  height: 120px;
   color: white;
   align-items: center;
   font-weight: bold;

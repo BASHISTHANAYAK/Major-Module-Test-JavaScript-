@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./style.css">
     <style>
       body {
         margin: 0;
@@ -84,6 +85,26 @@
         letter-spacing: 2px;
       }
 
+
+
+            
+.rules-AND-Next {
+  border: 2px solid transparent;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.rulesContent{
+  padding: 5px;
+  margin-top: 5px;
+}
+
+
       @media (max-width: 482px) {
         h1 {
           font-size: 3rem;
@@ -109,5 +130,31 @@
         <button><a href="./index.html"> PLAY AGAIN</a></button>
       </div>
     </div>
+
+
+    <div class="rulesBox">
+      <div class="rulesContent">
+        <h2>Game Rules</h2>
+        <ul>
+          <li>Rock beats scissors</li>
+          <li>Paper beats rock</li>
+          <li>Scissors beats paper</li>
+          <li>If both players choose the same, it's a tie</li>
+          <li>Click the cross icon to close</li>
+        </ul>
+      </div>
+      <span class="closeButton">&times;</span>
+    </div>
+
+
+    <section class="rules-AND-Next">
+      <button class="rulesButton">Rules</button>
+      <button class="Next-page-button">
+        <a href="./WinningPage.html">NEXT</a>
+      </button>
+    </section>
   </body>
 </html>
+
+
+<script src="./index.js"></script>
