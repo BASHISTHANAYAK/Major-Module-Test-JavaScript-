@@ -218,8 +218,8 @@ margin-top: -69px; */
   display: flex;
   justify-content: space-between;
   position: absolute;
-  right: 0%;
-  bottom: 0%;
+  right: 3%;
+  bottom: 5%;
 }
 
 .rules-AND-Next button {
