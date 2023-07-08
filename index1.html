@@ -231,8 +231,8 @@ text-align: center;
 
 
 .rules-AND-Next{
-  border: 2px solid blue;
-  width:190px;
+  border: 2px solid transparent;
+  width:auto;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -240,15 +240,27 @@ text-align: center;
   right: 4%;
   bottom: 4%;
 }
-.rules-AND-Next>button{
+
+
+
+.rules-AND-Next button{
   padding:5px 20px ;
-border: 2px solid white;
+  border: 2px solid white;
   border-radius:5px;
   background-color: #8cc461;
   color: white;
   font-weight: bolder;
   letter-spacing:1.5px ;
 }
+
+.rules-AND-Next button a{
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  letter-spacing:1.5px ;
+}
+
+
 
 
 #youWin{
@@ -294,6 +306,12 @@ border: 2px solid white;
 #youWin{
   display: none;
 }
+
+
+.Next-page-button{
+  display: none;
+}
+
 
 
 
@@ -363,7 +381,6 @@ border: 2px solid white;
 
 <section class="rules-AND-Next">
   <button class="rulesButton">Rules</button>
-<button class="Next-page-button">NEXT</button>
 </section>
 
 
@@ -435,7 +452,12 @@ border: 2px solid white;
                                 <span class="closeButton">&times;</span>
                                 </div>
                                 
-                                <button class="rulesButton">Rules</button>
+                                <section class="rules-AND-Next">
+                                  <button class="rulesButton">Rules</button>
+                                <button class="Next-page-button"><a href="./WinningPage.html">NEXT</a></button>
+                                </section>
+
+
                                     </header>
                         </div>
 
@@ -528,11 +550,11 @@ let Count_For_PC = parseInt(localStorage.getItem('PcCountScore')) || 0 ;
 
 
 
+//Next page button 
+let Next_page_button= document.getElementsByClassName("Next-page-button")
 
 
 
-// First_page_Pc_score.innerText=Count_For_PC;
-// First_page_My_score.innerText=Count_For_me;
 
 
 
@@ -587,6 +609,9 @@ if(Generate_MYNumber>Generate_PcNumber){
           First_page_My_score.innerText=Count_For_me;
           localStorage.setItem('MyCountScore',Count_For_me.toString());
 
+
+          //Unblocking Next button.
+          Next_page_button[0].style.display='block';
 
 
 }
