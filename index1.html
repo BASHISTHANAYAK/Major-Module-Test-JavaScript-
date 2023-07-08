@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+   
     <style>
       body{
             margin: 0;
@@ -18,7 +22,7 @@
       .RPS-header-div {
         width: 50%;
         height: auto;
-        border: 2px solid red;
+        border: 2px solid transparent;
         margin: auto;
         display: flex;
         justify-content: center;
@@ -26,18 +30,20 @@
      padding: 70px;
       }
       .white-border {
-        width: 70%;
+        width: 95%;
         height: auto;
         border: 1px solid white;
         border-radius: 10px;
         display: grid;
-        grid-template-columns: 60% auto 15%;
+        grid-template-columns: 50% 120px 120px;
      justify-content: space-around;
         padding: 15px;
+        font-family: 'Roboto', sans-serif;
+        grid-template-rows:auto;
       }
       .white-border div {
-        border: 1.5px solid black;
-        height: 65px;
+        border: 1.5px solid transparent;
+        height: 140px;
         color: white;
         align-items: center;
         font-weight: bold;
@@ -47,22 +53,27 @@
     
 
       .white-border>div:nth-child(1){
-         line-height: 2px;
+         line-height: 5px;
          padding-bottom: 9px;
-      }
+         font-weight: bolder;
+         font-size: 30px;
+padding-left:20px ;
+          }
 
+     
       .white-border>div:nth-child(2), .white-border>div:nth-child(3){
-        background-color: white;
+        background-color: rgb(244, 232, 232);
         color: black;
-        font-size: 60%;
         text-align: center;
         line-height:2px;
-      }
+        letter-spacing: 2px;
+        }
 
      .white-border div b{
-            font-size: 33px;
+            font-size: 38px;
         display: block;
        padding: 7px;
+       padding-top: 30px;
       }
 
 
@@ -80,12 +91,12 @@
  .triangle {
         width: 500px;
         height: 500px;
-        border: 2px solid red;       
+        border: 2px solid transparent;       
         margin: auto;
         margin-top: 40px;
       }
       .first-div {
-        border: 2px solid rgb(0, 255, 68);
+        border: 2px solid transparent;
         width: 40%;
         height: 100px;
         margin: auto;
@@ -137,7 +148,7 @@
 
 
       .second-div {
-        border: 1px solid black;
+        border: 1px solid transparent;
         height: 150px;
         width: 80%;
         display: flex;
@@ -191,6 +202,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;
 background-color: #004429;
+color: white;
 }
     
 
@@ -251,6 +263,7 @@ text-align: center;
   color: white;
   font-weight: bolder;
   letter-spacing:1.5px ;
+  margin-left: 8px;
 }
 
 .rules-AND-Next button a{
@@ -268,7 +281,7 @@ text-align: center;
 }
 
 .Two-circles{
-  border: 1px solid  black;
+  border: 1px solid  transparent;
   width: 60%;
   height: auto;  
   margin: auto;
@@ -281,7 +294,7 @@ text-align: center;
 }
 
 .Two-circles>div{
-  border: 1px solid red;
+  border: 1px solid transparent;
   height: auto;
   text-align: center;
   color: white;
@@ -301,8 +314,15 @@ text-align: center;
 .Two-circles>div button{
   padding: 10px 20px 10px 20px;
   border-radius: 5px;
+  border: 1px solid transparent;
+}
+.Two-circles>div button a{
+  text-decoration: none;
+  color: black;
 }
 
+
+/* Winning page */
 #youWin{
   display: none;
 }
@@ -323,7 +343,61 @@ text-align: center;
         }
         .white-border div {
           text-align: center;
+          width: 70%;
+          margin-top: 5%;
         }
+      }
+
+
+
+      @media (max-width: 700px){
+
+        .RPS-header-div{
+         width: 100vw;
+        }
+            .white-border {
+            width: 100%;
+            grid-template-columns: 50% 50% 50%;
+        justify-content:space-around;
+            padding: 25px;
+                }
+
+                .white-border>div{
+                  padding: 20px;
+                  margin-top: 13px;
+                }
+
+
+                .white-border>div:nth-child(2){
+                display: grid;
+                }
+
+                .white-border>div:nth-child(3){
+                  padding: 40px;
+                display: grid;
+                padding-top: 17px;
+                padding-bottom: 10px;
+                }
+                .triangle{
+               border-color: transparent;     
+               position: relative;      
+                }
+
+                  .rules-AND-Next{
+                  position: relative;
+                  right: 0;
+                  bottom: 105px;
+                  }
+
+                  .Two-circles{
+                margin-left: 60px;
+                    width: 100%;
+                      }
+                      .Two-circles>div{
+                        width: 100%;
+                      }
+
+                  
       }
     </style>
   </head>
@@ -419,7 +493,7 @@ text-align: center;
 
 
                                           <div class="Two-circles">
-                                            <div> <p id="you-pickedUP-P">YOU PICKED</p> <img id="Winning-page-FIRST-img" src="./Images/pc pick pink.jpg" alt=""></div>
+                                            <div > <p id="you-pickedUP-P">YOU PICKED</p> <img id="Winning-page-FIRST-img" src="./Images/pc pick pink.jpg" alt=""></div>
                                             <div>
                                               <p id="WIn-Or-Loss-p"></p>
                                               <P>AGAINST PC</P>
@@ -505,6 +579,8 @@ rulesBox[i].style.display = 'none';
 <!-- *********************************************************************************************** -->
 
 <script>
+
+  
 let AllCircles = document.getElementsByClassName("click-to-generate");
 
 let My_Score = document.getElementsByClassName("My-score");
@@ -612,6 +688,10 @@ if(Generate_MYNumber>Generate_PcNumber){
 
           //Unblocking Next button.
           Next_page_button[0].style.display='block';
+
+        
+
+
 
 
 }
